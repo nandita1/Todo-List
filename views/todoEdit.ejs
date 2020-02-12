@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>To-Do List</h2>
+      <div class="todo">
+        <form action="/" method="POST" class="todo-header">
+          <input type="text" name="content" />
+          <button type="submit"><span class="fas fa-plus"></span></button>
+        </form>
+        <ul class="todo-list">
+          <% todoTasks.forEach( details => { %> <% if(details._id == idTask) {
+          %>
+          <li class="todo-list-item d-flex flex-row">
+            <% if(details.done == true) { %>
+              <span class="fa fa-check" aria-hidden="true"></span>
+              <% } %>
+            <form action="/edit/<%=details._id %>" method="POST">
+              <input
+                class="mr-auto p-2"
+                type="text"
+                value="<%= details.content %>"
+                name="content"
+              />
+              <button type="submit" class="p-2">Confirm</button>
+              <button class="cancel p-2"><a href="/">Cancel</a></button class="cancel p-2">
+            </form>
+          </li>
+          <% } else { %>
+          <li class="todo-list-item d-flex flex-row">
+            <% if(details.done == 1) { %>
+              <span class="p-2 done fa fa-check" aria-hidden="true"></span>
+              <% } %>
+              <div class="todo-list-item-name mr-auto p-2">
+                <a href="/done/<%=details._id %>/<%=details.done %>">
+                  <%= details.content %>
+                </a>
+                
+              </div>
+            <a href="/edit/<%=details._id %>" class="edit p-2">
+              <span class="fas fa-edit"></span>
+            </a>
+            <a href="/remove/<%=details._id %>" class="remove p-2">
+              <span class="fas fa-times"></span>
+            </a>
+          </li>
+          <% } %> <% }) %>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

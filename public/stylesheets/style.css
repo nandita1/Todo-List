@@ -1,0 +1,107 @@
+body {
+  background-color: #fc4445;
+}
+
+.container {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  width: 600px;
+}
+
+h2 {
+  color: white;
+  margin-left: 25%;
+  padding: 10px;
+  font-size: 50px;
+}
+
+.todo-header input {
+  width: 92%;
+  border: none;
+  border-radius: 5px;
+  height: 30px;
+}
+
+.todo-header button {
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 5px;
+  background-color: rgb(51, 212, 100);
+}
+
+.todo-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.todo-list-item {
+  width: 95%;
+  padding: 5px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  font-family: "Candal", sans-serif;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.todo-list-item-name a {
+  color: white;
+  text-decoration: none;
+}
+
+.done {
+  color: rgb(143, 233, 58);
+  margin-top: 5px;
+  margin-right: 10px;
+}
+
+.todo-list-item .edit {
+  color: rgb(143, 233, 58);
+  margin-right: 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.todo-list-item .remove {
+  color: rgb(243, 96, 96);
+  margin-right: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.todo-list-item form {
+  width: 100%;
+}
+
+.todo-list-item input {
+  margin-right: 20px;
+  border: none;
+  border-radius: 5px;
+  width: 70%;
+}
+
+.todo-list-item button {
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px;
+  background-color: rgb(51, 212, 100);
+}
+
+.todo-list-item .cancel {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px;
+  margin-left: 5px;
+  background-color: rgb(223, 43, 43);
+}
+
+.cancel a {
+  color: white;
+  text-decoration: none;
+}
