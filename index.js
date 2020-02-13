@@ -13,13 +13,15 @@ app.use(express.urlencoded({ extended: true }));
 
 app.set("view engine", "ejs");
 
+var port = process.env.PORT || 3000;
+
 mongoose.set("useFindAndModify", false);
 mongoose.connect(
   process.env.DB_CONNECT,
   { useUnifiedTopology: true, useNewUrlParser: true },
   () => {
-    console.log("Connected to db!");
-    app.listen(3000, () => console.log("Server Up and running"));
+    console.log("Connected to db on " + port);
+    app.listen(port, () => console.log("Server Up and running"));
   }
 );
 
